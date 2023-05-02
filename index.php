@@ -13,6 +13,7 @@
       <li><a href="tipo_subsidio.php">Tipos de Subsidio</a></li>
       <li><a href="departamento.php">Departamentos</a></li>
       <li><a href="asignacion_subsidio.php">Asignación de Subsidio</a></li>
+	  <li><a href="prueba.php">una pequena prueba de consulta</a></li>
     </ul>
   </body>
 </html>
