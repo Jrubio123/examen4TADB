@@ -11,13 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Creamos un filtro para buscar el departamento con el id dado
     $filter = ['_id' => new MongoDB\BSON\ObjectId($id)];
 
-    // Creamos una opción para eliminar el primer documento que cumpla con el filtro
-    $options = ['limit' => 1];
-
     // Creamos un comando de eliminación
     $command = new MongoDB\Driver\Command([
         'delete' => 'departamentos',
-        'deletes' => [$filter],
+        'deletes' => [['q' => $filter, 'limit' => 1]],
         'writeConcern' => new MongoDB\Driver\WriteConcern(1)
     ]);
 
@@ -44,5 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="id">
         <input type="submit" value="Borrar">
     </form>
+	<a href="departamento.php">Volver a departamento</a>
 </body>
 </html>
